@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.alfresco</groupId>
+    <artifactId>hello-world-amp-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Workshop Sample Amp Parent</name>
+    <packaging>pom</packaging>
+
+    <parent>
+        <artifactId>acs-community-packaging</artifactId>
+        <groupId>org.alfresco</groupId>
+        <version>6.1.2-ga</version>
+    </parent>
+
+    <repositories>
+        <repository>
+            <id>alfresco-public</id>
+            <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+
+    <properties>
+        <!-- Properties used in dependency declarations, you don't need to change these -->
+        <alfresco.groupId>org.alfresco</alfresco.groupId>
+        <alfresco.repository.version>6.1.2-ga</alfresco.repository.version>
+        <alfresco.share.version>6.1.0-RC3</alfresco.share.version>
+
+        <image.repository>repository-name</image.repository>
+
+        <!-- Compile with Java 8 -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.alfresco</groupId>
+                <artifactId>alfresco-repository</artifactId>
+                <version>${dependency.alfresco-repository.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+  <modules>
+    <module>repo-amp</module>
+  </modules>
+</project>
